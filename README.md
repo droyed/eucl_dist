@@ -1,8 +1,10 @@
 # Euclidean Distance Computation in Python
 
+For a detailed discussion, please head over to [**`Wiki page/Main Article`**](https://github.com/droyed/eucl_dist/wiki/Main-Article).
+
 ## Introduction
 
-Distance computations between datasets have many forms as listed in the [`Wiki page`](https://en.wikipedia.org/wiki/Distance). Among those, [`euclidean distance`](https://en.wikipedia.org/wiki/Euclidean_distance) is widely used across many domains. Computing it at different computing platforms and levels of computing languages warrants different approaches. At Python level, the most popular one is [`SciPy's cdist`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.cdist.html#scipy.spatial.distance.cdist). In the recent years, we have seen contributions from [`scikit-learn`](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.pairwise_distances.html) to the same cause. The motivation with this repository codebase is to bring in noticeable speedups by using an altogether different approach to distance computations and in the process leveraging parallel architectures like GPU. We will also study the best use cases that are suited to each of those implementations.
+Distance computations between datasets have [`many forms`](https://en.wikipedia.org/wiki/Distance). Among those, [`euclidean distance`](https://en.wikipedia.org/wiki/Euclidean_distance) is widely used across many domains. Computing it at different computing platforms and levels of computing languages warrants different approaches. At Python level, the most popular one is [`SciPy's cdist`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.cdist.html#scipy.spatial.distance.cdist). In the recent years, we have seen contributions from [`scikit-learn`](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.pairwise_distances.html) to the same cause. The motivation with this repository codebase is to bring in noticeable speedups by using an altogether different approach to distance computations and in the process leveraging parallel architectures like GPU. We will also study the best use cases that are suited to each of those implementations.
 
 
 ## Overview
