@@ -45,6 +45,7 @@ Few examples are run on IPython console.
 
 ### Example #1
 
+```python
     # Setup inputs
     In [2]: import numpy as np
        ...: a = np.random.rand(10000,3)
@@ -55,9 +56,10 @@ Few examples are run on IPython console.
 
     In [106]: %timeit pairwise_distances(a,b, 'sqeuclidean')
     1 loop, best of 3: 282 ms per loop
-
+```
 Using proposed methods -
 
+```python
     # Import proposed CPU implementation and use it with best configuarion for such a dataset
     In [111]: from eucl_dist.cpu_dist import dist
 
@@ -74,24 +76,29 @@ Using proposed methods -
     # Use best configured GPU implementation with final output kept on GPU
     In [121]: %timeit gdist(a, b, optimize_level=3, output='gpu')
     10 loops, best of 3: 21.5 ms per loop
+```
 
 ### Example #2
 
 Higher dimensionality case -
 
+```python
 	In [238]: a = np.random.rand(800,2048).astype(np.float32)
 	     ...: b = np.random.rand(800,2048).astype(np.float32)
 
 	In [242]: %timeit pairwise_distances(a,b, 'sqeuclidean')
 	1 loop, best of 3: 922 ms per loop
+```
 
 With the best configurations from the proposed methods -
 
+```python
 	In [253]: %timeit dist(a, b, matmul='dot', method='accum', precision='auto')
 	100 loops, best of 3: 14.3 ms per loop
 
 	In [255]: %timeit gdist(a, b, optimize_level=4) # Final output is back on CPU
 	100 loops, best of 3: 7.2 ms per loop
+```
 
 Speedup of **`64x+`** and **`128x+`** with the CPU and GPU based implementations respectively!
 
