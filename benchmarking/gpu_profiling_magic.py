@@ -57,6 +57,12 @@ best_cpu_df = max_columns(cpu_speedup_df, ['Config','Speedup'])
 best_gpu_df = max_columns(gpu_speedup_df, ['Config','Speedup'])
 best_config_df = pd.concat([best_cpu_df, best_gpu_df],axis=1, keys=['CPU','GPU'])
 
+pd.set_option('precision', 1)
+print("Speedups : \n")
+print(speedup_df)
+print("\nBest speedups :\n")
+print(best_config_df)
+
 # Save results for later study
 save_df_as_npy("gpu_speedup_df.npy",speedup_df)
 save_df_as_npy("gpu_best_speedup_df.npy",best_config_df)
