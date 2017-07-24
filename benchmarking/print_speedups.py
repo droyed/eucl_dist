@@ -63,4 +63,4 @@ maxc_comb = [maxc(nomkl_speedup_df,cols), maxc(mkl_speedup_over_nomkl_df, cols)]
 cpu_best_config_df = pd.concat(maxc_comb, axis=1, keys=['noMKL','MKL'])
 all_best_config_df = pd.concat([cpu_best_config_df.loc['F32'], gpu_best_config_df],axis=1)
 print("\nBest configurations :\n")
-print all_best_config_df
+print(all_best_config_df)
